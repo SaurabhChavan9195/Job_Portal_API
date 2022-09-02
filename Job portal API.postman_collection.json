@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "6173a8cb-e8d7-4b82-99e2-542b86a6b9ec",
+		"name": "Job portal API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Employee Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"7\",\r\n    \"fname\": \"khan\",\r\n    \"lname\": \"samir \",\r\n    \"email\":\"samir@gmail.com\",\r\n    \"DOB\":\"1990-08-30\",\r\n    \"age\":\"22\",\r\n    \"gender\":\"M\",\r\n    \"password\":\"admin\",\r\n    \"password2\":\"admin\",\r\n    \"TC\":\"True\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/employee/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employee",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employee Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"example1@gmail.com\",\r\n    \"password\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/employee/login/?accept",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employee",
+						"login",
+						""
+					],
+					"query": [
+						{
+							"key": "accept",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employee Profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYwNjcyODI5LCJpYXQiOjE2NjA2NzE2MjksImp0aSI6ImQ5ZmM0Y2YxOTM0YjRhMTZhMTNhNzA0NjY3N2QwYjcwIiwidXNlcl9pZCI6IjxkamFuZ28uZGIubW9kZWxzLnF1ZXJ5X3V0aWxzLkRlZmVycmVkQXR0cmlidXRlIG9iamVjdCBhdCAweDAwMDAwMjBBOUZDQTNGNDA-In0.a7O0B4yRhXdtAX1rWpkDVumK0cQhfE5tyKt9ZvajJtA",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/employee/profile/11",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employee",
+						"profile",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employee Education",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYxNDM0MDkwLCJpYXQiOjE2NjE0MzEwOTAsImp0aSI6IjNlMTg5OGRiNjI3NzQ0YTQ5MmE4MjFmMGZmZDhkOWNjIiwidXNlcl9pZCI6NX0.gP92c9ZTH7WiBe1gkHoZVCT0VioGQ27PNxCkogjAbjo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"5\",\r\n    \"School_Name\" :\"Lokmanya Vidya Mandir Highschool\",\r\n    \"SSC_Percentage\":\"80\",\r\n    \"SSC_Passing_Year\": \"2015-03-08\",\r\n    \"College_Name\":\"CSC\",\r\n    \"HSC_Percentage\":\"60\",\r\n    \"HSC_Passing_Year\":\"2017-08-03\",\r\n    \"University_Name\":\"Mumbai University\",\r\n    \"Graduation_Percentage\":\"78\",\r\n    \"Graduation_Passing_Year\":\"2020-08-07\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/employee/education/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employee",
+						"education",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employee Experiance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYxNDM2OTMxLCJpYXQiOjE2NjE0MzM5MzEsImp0aSI6ImZiODY0M2MzNjM5MDQ1YmY4YzgwYjIyOGVjMjc0MGI5IiwidXNlcl9pZCI6NX0.NZKxO8BNO36HL9BcOUZ67WYHY0IIiarAs4fECeOxckk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\":\"5\",\r\n    \"F_id\": 1,\r\n    \"companay_name\": \"TATA\",\r\n    \"location\": \"andheri\",\r\n    \"joining_date\": \"1900-08-30\",\r\n    \"leaving_date\": \"1900-08-30\",\r\n    \"total_Experience\": \"12\",\r\n    \"current_CTC\": 10000,\r\n    \"Notice_Period\": 30\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/employee/experiance/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employee",
+						"experiance",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employee Projects",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\":\"5\",\r\n    \"project_name\":\"abc_projects\",\r\n    \"project_desc\":\"project_desc  and all\",\r\n    \"start_date\":\"2020-08-10\",\r\n    \"end_date\" :\"2021-07-30\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/employee/projects/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employee",
+						"projects",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "skill table data",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Employee Skills View",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "change password",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Passowrd Reset Email",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Rest Password",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
